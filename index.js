@@ -8,9 +8,7 @@ import limits from './limits.js';
 const app = express();
 const server = http.createServer(app);
 
-const io = new Server(server, {
-    path: '/stream',
-});
+const io = new Server(server);
 
 const current = {};
 
