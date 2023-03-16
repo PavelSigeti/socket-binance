@@ -1,17 +1,12 @@
 import wsx from './wsx.js';
 import data from './data.json' assert { type: "json" };
-import express from 'express';
-import http from 'http';
 import {Server} from 'socket.io';
 import limits from './limits.js';
 
-const app = express();
-const server = http.createServer(app);
 
-const io = new Server(server, {
+const io = new Server({
     cors: {
         origin: '*',
-        credentials: true,
     }
   });
 
@@ -39,4 +34,4 @@ io.on("connection", (socket) => {
 });
 
 
-server.listen(8000);
+io.listen(8000);
