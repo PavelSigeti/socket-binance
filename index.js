@@ -8,7 +8,11 @@ import limits from './limits.js';
 const app = express();
 const server = http.createServer(app);
 
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+      origin: "https://scalplist.com"
+    }
+  });
 
 const current = {};
 
