@@ -1,6 +1,6 @@
 FROM node:18.12
 
-WORKDIR /var/www/socket
+WORKDIR /socket
 
 COPY package*.json ./
 
@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD node index.js
+CMD [ "node", "index.js"]
