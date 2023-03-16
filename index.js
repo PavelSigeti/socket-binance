@@ -28,7 +28,6 @@ io.on("connection", (socket) => {
         if(limits[d.symbol] < current[d.symbol]) {
             current[d.symbol] = 0;
             const data = JSON.stringify(d);
-            console.log(limits[d.symbol]);
             io.emit('data', data);
         } else if(!limits[d.symbol] && current[d.symbol] > 12) {
             current[d.symbol] = 0;
